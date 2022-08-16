@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://admin-soumya:soumya0802atlas@cluster0.5pscf.mongodb.net/URLshortenerDB");
+mongoose.connect(process.env.DB_URL);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
